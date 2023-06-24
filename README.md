@@ -18,8 +18,12 @@
 
 Т.к. в MS SQL Server для реализации М:М необходима промежуточная таблица, то предположим ее существование. Т. к. продукт должен выводиться даже без категорий, но про категории не сказано того же, то используем LEFT JOIN
 
-SELECT Products.ProductName, Categories.CategoryName FROM Products 
+SELECT Products.ProductName, Categories.CategoryName FROM Products
+
 LEFT JOIN ProductCategories 
+
 ON Products.ProductId = ProductCategories.ProductId
+
 LEFT JOIN Categories 
+
 ON ProductCategories.CategoryId = Categories.CategoryId
